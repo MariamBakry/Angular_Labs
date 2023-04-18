@@ -1,0 +1,16 @@
+
+<br>
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <table class="table table-bordered" style="margin: 0 auto; width: 70%;">
+    <tbody>
+      <tr>
+        <td><app-register (registerEvent)="getStudents($event)"></app-register></td>
+      </tr>
+      <tr>
+        <td class="text-center"><app-students [StudentsData]="studentsData"></app-students></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  

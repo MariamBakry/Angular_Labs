@@ -1,0 +1,53 @@
+<div class="card">
+    <h5 class="card-header info-color white-text text-center py-4" style="color: #6a89cc">
+        <strong>Register New Student</strong>
+    </h5>
+    <br>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0 align-items-center">
+
+        <!-- Form -->
+        <form class="text-center" style="color: #757575;">
+
+            <div class="form-row">
+                <div class="col">
+                    <!-- Name -->
+                    <div class="md-form">
+                        <input type="text"  class="form-control" placeholder="Name" [(ngModel)]="userName" name="uname" required><br>
+                        
+                        <div class="alert alert-danger" role="alert" *ngIf="userName.length<3 && userName; else nameBlock">
+                            <p>Name is not valid</p>
+                        </div>
+                        <ng-template #nameBlock>
+                            <div class="alert alert-success" role="alert" *ngIf="userName">
+                                <p>Valid Name</p>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Age -->
+                    <div class="md-form">
+                        <input type="text"  class="form-control" placeholder="Age" [(ngModel)]="userAge" name="uage" required><br>
+                        <div class="alert alert-danger" role="alert" *ngIf="+userAge>40 || +userAge<20 && userAge; else ageBlock">
+                            <p>Age is not valid</p>
+                        </div>
+                        <ng-template #ageBlock>
+                            <div class="alert alert-success" role="alert" *ngIf="userAge">
+                                <p>Valid Age</p>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register button -->
+            <input class="btn btn-outline-info btn-rounded my-4 waves-effect z-depth-0" type="button" (click)="Add()" style="width: 40vh;" value="Add Student">
+
+        </form>
+        <!-- Form -->
+
+    </div>
+
+</div>

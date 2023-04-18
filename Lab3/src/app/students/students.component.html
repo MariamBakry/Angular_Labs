@@ -1,0 +1,25 @@
+
+<br>
+<div class="card">
+    <div class="card-header info-color" style="font-weight: bold; font-size: larger; color: #6a89cc;">
+        All Students
+    </div>
+    <div class="card-body">
+        <table class="table table-info table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let s of StudentsData; index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{s.name}}</td>
+                    <td>{{s.age}}</td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+</div>
